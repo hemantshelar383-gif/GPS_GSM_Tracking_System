@@ -1,24 +1,36 @@
-# GPS_GSM_Tracking_System
-Real-time GPS tracking system using Arduino, NEO-6M GPS and GSM module with Google Maps link via SMS.
-📍 GPS GSM Tracking System using Arduino
-🔹 Project Overview
+🌍 GPS & GSM Based Vehicle Tracking System using Arduino
+1. Introduction
 
-This project implements a real-time GPS tracking system using Arduino UNO, NEO-6M GPS module, and SIM800/SIM900 GSM module.
-The system fetches live latitude and longitude coordinates and sends them to a registered mobile number via SMS containing a Google Maps link, enabling easy location tracking.
+In recent years, location tracking systems have become an essential part of modern transportation, logistics, and security solutions. GPS and GSM technologies are widely used to track vehicles, assets, and people in real time.
+This project presents a GPS and GSM based tracking system using Arduino UNO, which provides the live geographical location of an object by sending latitude and longitude as a Google Maps link via SMS.
 
-🔹 Features
+The system is designed to be low-cost, reliable, and easy to implement, making it suitable for academic and real-world embedded applications.
 
-Real-time GPS location tracking
+2. Objectives of the Project
 
-SMS-based location sharing
+To design a real-time GPS tracking system using Arduino
 
-Google Maps clickable link generation
+To interface GPS and GSM modules with Arduino UNO
 
-Works without internet on Arduino side
+To send location details through SMS
 
-Reliable and low-cost embedded solution
+To generate a clickable Google Maps link
 
-🔹 Hardware Components
+To understand serial communication and AT commands
+
+3. System Overview
+
+The system consists of an Arduino UNO connected to a GPS module and a GSM module.
+
+The GPS module receives satellite signals and provides location data.
+
+The Arduino UNO processes and validates the GPS data.
+
+The GSM module sends the processed location to a predefined mobile number in the form of an SMS.
+
+The system does not require an internet connection on the Arduino side and works solely on GSM network availability.
+
+4. Hardware Components Used
 
 Arduino UNO
 
@@ -26,108 +38,146 @@ NEO-6M GPS Module
 
 SIM800 / SIM900 GSM Module
 
-SIM Card (SMS enabled)
+SIM Card with SMS service enabled
 
-External power supply for GSM
+External power supply for GSM module
 
-Breadboard and jumper wires
+Breadboard
 
-🔹 Software Requirements
+Jumper wires
+
+5. Software Requirements
 
 Arduino IDE
 
-TinyGPS++ library
+TinyGPS++ Library
 
-SoftwareSerial library
+SoftwareSerial Library
 
-🔹 Circuit Description
+6. Block Diagram Description
 
-GPS module communicates with Arduino using SoftwareSerial pins
+The block diagram consists of:
 
-GSM module sends SMS using AT commands
+GPS Module → Sends latitude & longitude to Arduino
 
-External power supply is used for GSM to handle high current requirements
+Arduino UNO → Processes GPS data and controls GSM module
 
-📁 Circuit diagram is available in the circuit connection/ folder.
+GSM Module → Sends SMS with Google Maps link
 
-🔹 Working Principle
+Mobile Phone → Receives SMS and displays location
 
-The GPS module receives satellite signals and provides latitude and longitude data.
+The block diagram and circuit diagram are provided in the repository folders.
 
-Arduino reads and validates GPS data using the TinyGPS++ library.
+7. Circuit Description
+
+The GPS module communicates with Arduino using SoftwareSerial pins.
+
+The GSM module communicates using AT commands.
+
+GSM module is powered using an external power supply due to high current requirements.
+
+Proper grounding is ensured between Arduino, GPS, and GSM modules.
+
+Circuit diagram images are available in the circuit connection/ folder.
+
+8. Working Principle
+
+The GPS module continuously receives data from GPS satellites.
+
+The Arduino reads raw GPS data and decodes it using the TinyGPS++ library.
+
+Valid latitude and longitude values are extracted.
 
 Arduino formats the coordinates into a Google Maps URL.
 
-GSM module sends an SMS containing the Google Maps link to the registered mobile number.
+The GSM module sends an SMS containing the Google Maps link to the registered mobile number.
 
-The receiver opens the link to view the live location on Google Maps.
+The user clicks the link to view the real-time location on Google Maps.
 
-🔹 Arduino Code
+9. Algorithm
+
+Initialize serial communication for GPS and GSM
+
+Read GPS data continuously
+
+Check for valid GPS location
+
+Extract latitude and longitude
+
+Generate Google Maps URL
+
+Send SMS using GSM AT commands
+
+Repeat process after fixed delay
+
+10. Arduino Code
 
 The complete Arduino source code is available in:
 
 code/gps_gsm_maps.ino
 
 
-The code includes:
+The code is written in Embedded C and follows a modular structure for better readability and scalability.
 
-GPS data decoding
+11. Output
 
-GSM AT command handling
+SMS received on the mobile phone
 
-Google Maps link generation
+Message contains:
 
-Modular and error-safe structure
+Latitude
 
-🔹 Output
+Longitude
 
-SMS received on mobile phone
+Google Maps clickable link
 
-Message contains latitude, longitude, and Google Maps link
+Output screenshots are available in the output/ folder.
 
-📁 Output screenshots are available in the output/ folder.
+12. Applications
 
-🔹 Applications
+Vehicle tracking system
 
-Vehicle tracking systems
+Anti-theft vehicle security
 
-Anti-theft solutions
+Fleet management systems
 
-Fleet management
+Emergency and rescue operations
 
-Emergency location tracking
+Asset and logistics tracking
 
-Asset monitoring
+13. Advantages
 
-🔹 Advantages
+Low cost and easy implementation
 
-Simple and cost-effective design
+No internet dependency on Arduino
 
-No internet dependency on hardware
+High reliability
 
-Works in remote areas with GSM coverage
+Portable and scalable
 
-Easy to extend and upgrade
+Suitable for real-time applications
 
-🔹 Limitations
+14. Limitations
 
 SMS delay depends on GSM network
 
-Initial GPS fix may take time
+Initial GPS lock time may vary
 
-GSM module requires external power
+GSM module requires high current power supply
 
-🔹 Future Enhancements
+15. Future Scope
 
-ESP32 + IoT cloud dashboard
+Integration with ESP32 for IoT cloud tracking
 
-Live web-based tracking
+Live web dashboard for monitoring
 
 Speed and distance calculation
 
 Mobile application integration
 
-🔹 Repository Structure
+Data logging and analytics
+
+16. Repository Structure
 GPS_GSM_Tracking_System
 │
 ├── code/
@@ -142,12 +192,12 @@ GPS_GSM_Tracking_System
 ├── README.md
 └── LICENSE
 
-🔹 Author
+17. Author
 
 Hemant Shelar
 Electronics & Telecommunication Engineering (ENTC)
-Arduino | Embedded Systems | IoT
+Embedded Systems | Arduino | IoT
 
-🔹 License
+18. License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License, allowing free use, modification, and distribution.
