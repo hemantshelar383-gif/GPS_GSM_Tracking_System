@@ -10,11 +10,11 @@
 
 A real-time vehicle tracking system built with Arduino UNO, NEO-6M GPS module, and SIM800L GSM module. When triggered, the system reads live GPS coordinates and sends a **clickable Google Maps link via SMS** — no internet connection on the Arduino side required.
 
+> 🎬 More projects on my [YouTube channel → Electronics Engineer](https://youtube.com/@electronicsengineer-k5j)
+
 ---
 
 ## 📸 Demo
-
-> SMS received on mobile phone with a live Google Maps link
 
 | Circuit Setup | SMS Output |
 |---|---|
@@ -77,7 +77,7 @@ In Arduino IDE → **Sketch → Include Library → Manage Libraries** → Searc
 Refer to the circuit diagram in the `/circuit diagrams` folder.
 
 ### 4. Configure the Code
-Open `Gps code.ino/sketch_jan01a/sketch_jan01a.ino` and update the mobile number:
+Open the `.ino` file and update the mobile number:
 ```cpp
 String mobileNumber = "+91XXXXXXXXXX"; // Replace with your number
 ```
@@ -141,6 +141,7 @@ https://maps.google.com/?q=21.1458,79.0882
 **Hemant Shelar**
 Electronics & Telecommunication Engineering | Embedded Systems | IoT | Arduino
 
+[![YouTube](https://img.shields.io/badge/YouTube-Electronics%20Engineer-red?style=flat&logo=youtube)](https://youtube.com/@electronicsengineer-k5j)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/hemant-shelar-l07)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/hemantshelar383-gif)
 
